@@ -1,21 +1,37 @@
+<h2><%= link_to "Sessions", sessions_path %></h2>
 <h2><%= link_to "Add an Event", new_event_path %></h2>
+<h2><%= link_to "Add a Session", new_session_path %></h2>
 
 <br>
   <%= link_to_if params[:filter], "All Days", events_path %> |
-  <%= link_to_if params[:filter] != 'tuesday', "Tuesday", events_path(filter:"tuesday") %> |
-  <%= link_to_if params[:filter] != 'wednesday', "Wednesday", events_path(filter:"wednesday") %>
+  <%= link_to_if params[:filter] != "tuesday", "Tuesday", events_path(filter:"tuesday") %> |
+  <%= link_to_if params[:filter] != "wednesday", "Wednesday", events_path(filter:"wednesday") %>
 <br><br>
 
   <%= link_to_if params[:filter], "All Events", events_path %> |
-  <%= link_to_if params[:filter] != 'keynote', "Keynote", events_path(filter:"keynote") %>
-  <%= link_to_if params[:filter] != 'keynote', "Track 1", events_path(filter:"keynote") %>
-  <%= link_to_if params[:filter] != 'keynote', "Track 2", events_path(filter:"keynote") %>
-  <%= link_to_if params[:filter] != 'keynote', "Track 3", events_path(filter:"keynote") %>
-  <%= link_to_if params[:filter] != 'keynote', "Track 4", events_path(filter:"keynote") %>
-  <%= link_to_if params[:filter] != 'keynote', "Track 5", events_path(filter:"keynote") %>
+  <%= link_to_if params[:filter] != 'keynote', "Keynote", events_path(filter:"keynote") %> |
+  <%= link_to_if params[:filter] != 'track 1', "Track 1", events_path(filter:"track 1") %> |
+  <%= link_to_if params[:filter] != 'track 2', "Track 2", events_path(filter:"track 2") %> |
+  <%= link_to_if params[:filter] != 'track 3', "Track 3", events_path(filter:"track 3") %> |
+  <%= link_to_if params[:filter] != 'track 4', "Track 4", events_path(filter:"track 4") %> |
+  <%= link_to_if params[:filter] != 'track 5', "Track 5", events_path(filter:"track 5") %> |
   <%= link_to_if params[:filter] != 'coffee', "Coffee Breaks", events_path(filter:"coffee") %> |
-  <%= link_to_if params[:filter] != 'keynote', "Lunch", events_path(filter:"keynote") %>
-  <%= link_to_if params[:filter] != 'keynote', "Party", events_path(filter:"keynote") %>
+  <%= link_to_if params[:filter] != 'lunch', "Lunch", events_path(filter:"lunch") %> |
+  <%= link_to_if params[:filter] != 'party', "Party", events_path(filter:"party") %>
+
+<br><br>
+
+  <%= link_to_if params[:filter], "All Events", events_path %> |
+  <%= link_to_if params[:filter] != 'keynote', "Keynote", events_path(filter:"keynote") %> |
+  <%= link_to_if params[:filter] != 'track 1', "Track 1", events_path(filter:"track 1") %> |
+  <%= link_to_if params[:filter] != 'track 2', "Track 2", events_path(filter:"track 2") %> |
+  <%= link_to_if params[:filter] != 'track 3', "Track 3", events_path(filter:"track 3") %> |
+  <%= link_to_if params[:filter] != 'track 4', "Track 4", events_path(filter:"track 4") %> |
+  <%= link_to_if params[:filter] != 'track 5', "Track 5", events_path(filter:"track 5") %> |
+  <%= link_to_if params[:filter] != 'coffee', "Coffee Breaks", events_path(filter:"coffee") %> |
+  <%= link_to_if params[:filter] != 'lunch', "Lunch", events_path(filter:"lunch") %> |
+  <%= link_to_if params[:filter] != 'party', "Party", events_path(filter:"party") %>
+
 <br><br>
 
 <table class="table">
