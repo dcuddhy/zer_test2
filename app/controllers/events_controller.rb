@@ -1,11 +1,32 @@
 class EventsController < ApplicationController
 
   def index
-      @movies = Movie.all
+    @events = Event.all
   end
 
   def new
-          @movie = Movie.new
-   end
+    @event = Event.new
+  end
+
+  def create
+    @event = Event.new(params.require(:event).permit(:date, :start, :end, :name, :track))
+    @event.save
+    redirect_to events_path
+  end
+
+  def show
+    @event = Event.find(params[:id])
+  end
+
+  def edit
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+    @event.update(params.require(:event).permit(:date, :start, :end, :name, :track))
+    redirect_to events_path
+  end
+
 
 end

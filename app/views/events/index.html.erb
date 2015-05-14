@@ -1,1 +1,22 @@
 this is my index
+<br>
+
+<%= link_to "Add an Event", new_event_path %>
+<br>
+<table class="table">
+
+<thead>
+  <th>Date</th><th>Start</th><th>End</th><th>Name</th><th>Track</th>
+</thead>
+<% @events.each do |event| %>
+
+<tr>
+  <td><%= event.date.strftime("%m/%d/%Y") %></td>
+  <td><%= event.start.strftime("%I:%M %p") %></td>
+  <td><%= event.end.strftime("%I:%M %p") %></td>
+  <td><%= link_to event.name, event_path(event) %></td>
+  <td><%= event.track %></td>
+</tr>
+  <br>
+<% end %>
+</table>
