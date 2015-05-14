@@ -1,7 +1,15 @@
 class EventsController < ApplicationController
 
   def index
-    @events = Event.all
+    @events = Event.all.order('date DSC')
+
+    if params[:filter] == 'tuesday'
+      @events = Event.all.where(date: "12/08/2015").order('start ASC')
+    elsif params[:filter] == 'wednesday'
+      @events = Event.all.where(date:"12/09/2015").order('start ASC')
+    else
+      @events = Event.all.order('date ASC')
+    end
   end
 
   def new
