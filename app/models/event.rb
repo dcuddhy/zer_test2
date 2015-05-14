@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
 
-
-  belongs_to :session
+  has_many :jtables
+  has_many :sessions, through: :jtables
 
 end

@@ -3,18 +3,6 @@ class EventsController < ApplicationController
   def index
     if params[:filter] == 'tuesday'
       @events = Event.all.where(date: "12/08/2015").order('start ASC')
-        if params[:filter] == 'track 1'
-          @events = Event.all.where(track: "Track 1 - Pattern Recognition").order('start ASC')
-        elsif params[:filter] == 'track 2'
-          @events = Event.all.where(track: "Track 2").order('start ASC')
-        elsif params[:filter] == 'track 3'
-          @events = Event.all.where(track: "Track 3").order('start ASC')
-        elsif params[:filter] == 'track 4'
-          @events = Event.all.where(track: "Track 4").order('start ASC')
-        elsif params[:filter] == 'track 5'
-          @events = Event.all.where(track: "Track 5").order('start ASC')
-        end
-
     elsif params[:filter] == 'wednesday'
       @events = Event.all.where(date:"12/09/2015").order('start ASC')
     else
