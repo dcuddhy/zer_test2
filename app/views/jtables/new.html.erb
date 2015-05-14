@@ -1,0 +1,33 @@
+<h2>This is a join table</h2>
+
+
+<table>
+  <tr>
+    <th>
+      <div>
+        <%= @event.name %>
+      </div>
+      <div>
+
+      </div>
+    </th>
+  </tr>
+
+  <tr>
+    <td>
+
+
+      <%= form_for [@event, @jtable] do |f| %>
+        <br>
+        <div class="form-group col-md-offset-2">
+          <%= text_field_tag :jtable %>
+        </div>
+
+        <div class="form-group">
+          <%= f.submit class:"btn btn-primary col-md-offset-2" %>
+        </div>
+
+      <% end %>
+    </td>
+  </tr>
+</table>

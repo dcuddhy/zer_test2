@@ -1,0 +1,12 @@
+<h2><%= link_to "Add a Join Table", new_event_jtable_path %></h2>
+
+<table class="table">
+  <thead>
+    <th> Join Table </th>
+  </thead>
+  <% @event.jtables.each do |jtable| %>
+    <tr>
+      <td class="col-md-2"><%= link_to jtable.session, new_event_jtable_path %></td></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,4 +1,4 @@
-class Session < ActiveRecord::Base
+class Jtable < ActiveRecord::Base
 
   belongs_to :event
   belongs_to :session
