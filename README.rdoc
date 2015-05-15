@@ -5,8 +5,13 @@ instances when you walk away, come back to the task, and see a glaring oversight
 and finish everything up in 10 minutes.
 
 To run locally:
-```bundle```
-```rake db:create```
-```rake db:migrate```
-```rake db:seed```
-```rails s```
+
+bundle
+
+rake db:create
+
+rake db:migrate
+
+rake db:seed
+
+rails s
