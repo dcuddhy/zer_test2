@@ -7,8 +7,31 @@ class EventsController < ApplicationController
       @events = Event.all.where(date:"12/09/2015").order('start ASC')
     else
       @events = Event.all.order('date ASC')
+        if params[:filter] == 'track 1'
+          @events = Event.all.where(track: "Track 1 - Pattern Recognition").order('start ASC')
+        elsif params[:filter] == 'track 2'
+          @events = Event.all.where(track: "Track 2 - Image, Speech, and Signal Processing").order('start ASC')
+        elsif params[:filter] == 'track 3'
+          @events = Event.all.where(track: "Track 3 - Document Analysis").order('start ASC')
+        elsif params[:filter] == 'track 4'
+          @events = Event.all.where(track: "Track 4 - Biometrics").order('start ASC')
+        elsif params[:filter] == 'track 5'
+          @events = Event.all.where(track: "Track 5").order('start ASC')
+        elsif params[:filter] == 'keynote'
+          @events = Event.all.where(track: "Keynote").order('start ASC')
+        elsif params[:filter] == 'coffee'
+          @events = Event.all.where(track: "Coffee Breaks").order('start ASC')
+        elsif params[:filter] == 'lunch'
+          @events = Event.all.where(track: "Lunch").order('start ASC')
+        elsif params[:filter] == 'party'
+          @events = Event.all.where(track: "Party").order('start ASC')
+        end
     end
   end
+
+
+
+
 
   def new
     @event = Event.new
